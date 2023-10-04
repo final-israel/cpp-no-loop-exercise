@@ -27,7 +27,7 @@
         ]
     },
     "stage2": {
-        "desc": "Calculate the average of the values in the vector",
+        "desc": "Calculate the average of the values in the vector, make sure your output type is int",
         "includes": [
             "vector"
         ],
