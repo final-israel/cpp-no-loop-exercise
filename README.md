@@ -2,6 +2,12 @@
 
 A short C++ exercise meant to introduce some standard algorithms.
 
+## Building the docker
+
+```sh
+./build_exercise.sh
+```
+
 ## Running the exercise
 
 After making sure you have access to the docker image (either by building it
@@ -29,8 +35,3 @@ tests.
 If the solution passes both compilation and the tests, the next stage will be
 automatically generated.
 
-## Building the docker
-
-```sh
-./build_exercise.sh
-```
