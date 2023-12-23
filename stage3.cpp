@@ -1,17 +1,21 @@
+#include <cstdint>
 #include <iostream>
 #include <iterator>
-#include <numeric>
-#include <string>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
 
-// Print all of the words in the container, separated by comma
-// (Python: ', '.join(words))
+
+// Check if every value in the vector is at least twice as big as the
+// previous value (ints[i] * 2 <= ints[i + 1]).
+// If they are, print "OK". If not print "BAD".
 // Example:
-//   Input: apple banana pineapple mango
-//  Output: apple, banana, pineapple, mango
+//   Input: 1 2 5 10
+//  Output: OK
+// Example:
+//   Input: 1 2 3 4
+//  Output: BAD
 
 
 // NOTE: You can print to stderr (using `cerr`) for debug prints
@@ -20,22 +24,18 @@ using namespace std;
 int main()
 {
     // Read input
-    // maybe make 3rd exercise
-    vector<string> words{istream_iterator<string>{cin}, istream_iterator<string>{}};
+    // maybe second 
+    vector<uint64_t> ints{istream_iterator<uint64_t>{cin}, istream_iterator<uint64_t>{}};
 
     // Your code goes here
     /* code */
-    if (words.empty()) {
-        return 0;
+    bool ok = adjacent_find(ints.begin(), ints.end(), [](int a, int b) { return b < a * 2;}) == ints.end();
+    if (ok) {
+        cout << "OK" << endl;
+    } else {
+        cout << "BAD" << endl;
     }
 
-    // maybe use next instead of ++
-    // can also start with an empty list and remove the last ", ".
-    string s = accumulate(++words.begin(), words.end(), words[0],
-                     [](const string& a, const string& b){
-                           return a + ", " + b;
-                     });
-    cout << s << endl;
     // Print your result instead of "answer"
-    //cout << "answer" << endl;
+
 }

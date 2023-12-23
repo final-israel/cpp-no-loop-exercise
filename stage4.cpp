@@ -1,21 +1,18 @@
-#include <cstdint>
+#include <algorithm>
 #include <iostream>
 #include <iterator>
-#include <vector>
-#include <algorithm>
+#include <list>
 
 using namespace std;
 
-
-// Check if every value in the vector is at least twice as big as the
-// previous value (ints[i] * 2 <= ints[i + 1]).
-// If they are, print "OK". If not print "BAD".
+// Print all elements in the container, each in a new line
 // Example:
-//   Input: 1 2 5 10
-//  Output: OK
-// Example:
-//   Input: 1 2 3 4
-//  Output: BAD
+//   Input: 10 20 30 40
+//  Output:
+//          10
+//          20
+//          30
+//          40
 
 
 // NOTE: You can print to stderr (using `cerr`) for debug prints
@@ -24,18 +21,16 @@ using namespace std;
 int main()
 {
     // Read input
-    // maybe second 
-    vector<uint64_t> ints{istream_iterator<uint64_t>{cin}, istream_iterator<uint64_t>{}};
+    // maybe make 4th exercise
+    // show an example where we never use the vector "ints"
+    list<int> ints{istream_iterator<int>{cin}, istream_iterator<int>{}};
 
     // Your code goes here
     /* code */
-    bool ok = adjacent_find(ints.begin(), ints.end(), [](int a, int b) { return b < a * 2;}) == ints.end();
-    if (ok) {
-        cout << "OK" << endl;
-    } else {
-        cout << "BAD" << endl;
-    }
+    
+    // can use begin(ints) instead
+    copy(ints.begin(), ints.end(), ostream_iterator<int>(cout, "\n"));
 
     // Print your result instead of "answer"
-
+    // cout << "answer" << endl;
 }

@@ -1,18 +1,14 @@
-#include <algorithm>
 #include <iostream>
 #include <iterator>
-#include <list>
+#include <numeric>
+#include <vector>
 
 using namespace std;
 
-// Print all elements in the container, each in a new line
+// Calculate the average of the values in the vector
 // Example:
 //   Input: 10 20 30 40
-//  Output:
-//          10
-//          20
-//          30
-//          40
+//  Output: 25
 
 
 // NOTE: You can print to stderr (using `cerr`) for debug prints
@@ -21,16 +17,14 @@ using namespace std;
 int main()
 {
     // Read input
-    // maybe make 4th exercise
-    // show an example where we never use the vector "ints"
-    list<int> ints{istream_iterator<int>{cin}, istream_iterator<int>{}};
+    // maybe make 1st exercise
+    vector<int> ints{istream_iterator<int>{cin}, istream_iterator<int>{}};
 
     // Your code goes here
     /* code */
-    
-    // can use begin(ints) instead
-    copy(ints.begin(), ints.end(), ostream_iterator<int>(cout, "\n"));
+    int sum = accumulate(ints.begin(), ints.end(), 0);
+    int res = sum / (int)ints.size();
 
     // Print your result instead of "answer"
-    // cout << "answer" << endl;
+    cout << res << endl;
 }

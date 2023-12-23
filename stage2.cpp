@@ -1,14 +1,17 @@
 #include <iostream>
 #include <iterator>
 #include <numeric>
+#include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-// Calculate the average of the values in the vector
+// Print all of the words in the container, separated by comma
+// (Python: ', '.join(words))
 // Example:
-//   Input: 10 20 30 40
-//  Output: 25
+//   Input: apple banana pineapple mango
+//  Output: apple, banana, pineapple, mango
 
 
 // NOTE: You can print to stderr (using `cerr`) for debug prints
@@ -17,14 +20,22 @@ using namespace std;
 int main()
 {
     // Read input
-    // maybe make 1st exercise
-    vector<int> ints{istream_iterator<int>{cin}, istream_iterator<int>{}};
+    // maybe make 3rd exercise
+    vector<string> words{istream_iterator<string>{cin}, istream_iterator<string>{}};
 
     // Your code goes here
     /* code */
-    int sum = accumulate(ints.begin(), ints.end(), 0);
-    int res = sum / (int)ints.size();
+    if (words.empty()) {
+        return 0;
+    }
 
+    // maybe use next instead of ++
+    // can also start with an empty list and remove the last ", ".
+    string s = accumulate(++words.begin(), words.end(), words[0],
+                     [](const string& a, const string& b){
+                           return a + ", " + b;
+                     });
+    cout << s << endl;
     // Print your result instead of "answer"
-    cout << res << endl;
+    //cout << "answer" << endl;
 }
