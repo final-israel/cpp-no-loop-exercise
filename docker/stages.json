@@ -1,33 +1,6 @@
 {
     "stage1": {
-        "desc": "Print all elements in the container, each in a new line",
-        "includes": [
-            "list"
-        ],
-        "container_type": "list<int>",
-        "container_name": "ints",
-        "element_type": "int",
-        "examples": 1,
-        "test_cases": [
-            {
-                "name": "4 numbers",
-                "input": "10 20 30 40",
-                "output": "10\n20\n30\n40"
-            },
-            {
-                "name": "1 number",
-                "input": "510",
-                "output": "510"
-            },
-            {
-                "name": "0 numbers",
-                "input": "",
-                "output": ""
-            }
-        ]
-    },
-    "stage2": {
-        "desc": "Calculate the average of the values in the vector",
+        "desc": "Calculate the average of the values in the vector, make sure your output type is int",
         "includes": [
             "vector"
         ],
@@ -68,7 +41,7 @@
             }
         ]
     },
-    "stage3": {
+    "stage2": {
         "desc": "Print all of the words in the container, separated by comma (Python: ', '.join(words))",
         "includes": [
             "vector",
@@ -101,7 +74,7 @@
             }
         ]
     },
-    "stage4": {
+    "stage3": {
         "desc": "Check if every value in the vector is at least twice as big as the previous value (ints[i] * 2 <= ints[i + 1]).\nIf they are, print \"OK\". If not print \"BAD\".",
         "includes": [
             "vector",
@@ -151,6 +124,33 @@
                 "name": "bad last value",
                 "input": "10 20 80 46",
                 "output": "BAD"
+            }
+        ]
+    },
+    "stage4": {
+        "desc": "Print all elements in the container, each in a new line",
+        "includes": [
+            "list"
+        ],
+        "container_type": "list<int>",
+        "container_name": "ints",
+        "element_type": "int",
+        "examples": 1,
+        "test_cases": [
+            {
+                "name": "4 numbers",
+                "input": "10 20 30 40",
+                "output": "10\n20\n30\n40"
+            },
+            {
+                "name": "1 number",
+                "input": "510",
+                "output": "510"
+            },
+            {
+                "name": "0 numbers",
+                "input": "",
+                "output": ""
             }
         ]
     },
