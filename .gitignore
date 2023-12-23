@@ -43,6 +43,3 @@ venv
 
 # Compile Commands
 compile_commands.json
-
-# Stage Output
-stage*
