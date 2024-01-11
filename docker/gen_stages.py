@@ -89,9 +89,9 @@ def test_case(name: Text, input_str: Text, solution: Solution) -> Dict[Text, Tex
 
 
 STAGES = {
-    'stage1': {
+    'stage4': {
         'desc': 'Print all elements in the container, each in a new line',
-        'includes': ['list'],
+        'includes': ['list', 'algorithm'],
         'container_type': 'list<int>',
         'container_name': 'ints',
         'element_type': 'int',
@@ -102,9 +102,9 @@ STAGES = {
             test_case('0 numbers', '', stage1_solution),
         ],
     },
-    'stage2': {
-        'desc': 'Calculate the average of the values in the vector',
-        'includes': ['vector'],
+    'stage1': {
+        'desc': 'Calculate the average of the values in the vector, make sure your output type is int',
+        'includes': ['vector', 'algorithm'],
         'container_type': 'vector<int>',
         'container_name': 'ints',
         'element_type': 'int',
@@ -118,9 +118,9 @@ STAGES = {
             test_case('negative average', '-10 2', stage2_solution),
         ],
     },
-    'stage3': {
+    'stage2': {
         'desc': "Print all of the words in the container, separated by comma (Python: ', '.join(words))",
-        'includes': ['vector', 'string'],
+        'includes': ['vector', 'string', 'algorithm'],
         'container_type': 'vector<string>',
         'container_name': 'words',
         'element_type': 'string',
@@ -134,12 +134,12 @@ STAGES = {
             test_case('1 word', 'C++', stage3_solution),
         ],
     },
-    'stage4': {
+    'stage3': {
         'desc': textwrap.dedent('''
             Check if every value in the vector is at least twice as big as the previous value (ints[i] * 2 <= ints[i + 1]).
             If they are, print "OK". If not print "BAD".
             ''').strip(),
-        'includes': ['vector', 'cstdint'],
+        'includes': ['vector', 'cstdint', 'algorithm'],
         'container_type': 'vector<uint64_t>',
         'container_name': 'ints',
         'element_type': 'uint64_t',
@@ -159,7 +159,7 @@ STAGES = {
     },
     'stage5': {
         'desc': 'Print the word that contains the highest amount of vowels ("aeiou").',
-        'includes': ['vector', 'string'],
+        'includes': ['vector', 'string', 'algorithm'],
         'container_type': 'vector<string>',
         'container_name': 'words',
         'element_type': 'string',
@@ -176,6 +176,35 @@ STAGES = {
             test_case('nothing', '', stage5_solution),
         ],
     },
+
+    'stage6': {
+        'desc': textwrap.dedent('''Given a list of numbers create a histogram with the buckets 0-9, 10-19 ..., 100-INF.
+                The output should look like:
+                0-9: n
+                10-19: n
+                20-29: n
+                30-39: n
+                40-49: n
+                50-59: n
+                60-69: n
+                70-79: n
+                80-89: n
+                90-99: n
+                100-INF: n
+                'n' being the number of members in the bucket.''').strip(),
+        'includes': ['vector', 'cstdint', 'algorithm'],
+        'container_type': 'vector<uint64_t>',
+        'container_name': 'histogram',
+        'element_type': 'uint64_t',
+        'examples': 2,
+        'test_cases': [
+            test_case('simple', '11 12 44 45 55 98 200 92 43 41 47', stage6_solution),
+            test_case('same value', '11 11 11 11 11', stage6_solution),
+            test_case('edges', '0 10 20 30 40 50 60 70 80 90 100 110', stage6_solution),
+        ],
+            }
+
+
 }
 
 

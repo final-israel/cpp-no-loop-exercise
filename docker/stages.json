@@ -201,5 +201,10 @@
                 "output": ""
             }
         ]
+    },
+    "stage6": {
+        "desc": "Given a list of numbers create a histogram with the buckets 0-9, 10-19 ..., 100-INF.\nThe output should look '0-9: n\n10-19: n\n20-29: n\n'",
+        "includes": [
+        ],
     }
 }
