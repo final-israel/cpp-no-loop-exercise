@@ -23,7 +23,7 @@ if compile "$STAGE_FILE" && test "$STAGE_NAME"; then
     declare -r NEXT_STAGE_NAME=stage$NEXT_STAGE
     if [ $NEXT_STAGE -gt $LAST_STAGE ]; then
         echo "Congragulations! You have finished the last stage!"
-    elif [ ! -f ${NEXT_STAGE_NAME}.cpp ]; then
+    elif [ ! -f ${NEXT_STAGE_NAME}.cpp ] || [ "$(cat ${NEXT_STAGE_NAME}.cpp | wc -l)" -le 1 ]; then
         generate $NEXT_STAGE_NAME &&
         echo "Generated a template for stage #$NEXT_STAGE! Good Luck!"
     else

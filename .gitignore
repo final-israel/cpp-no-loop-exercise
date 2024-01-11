@@ -41,8 +41,9 @@ venv
 # VSCode
 .vscode
 
+# CLion
+.idea
+cmake-build-*
+
 # Compile Commands
 compile_commands.json
-
-# Stage Output
-stage*

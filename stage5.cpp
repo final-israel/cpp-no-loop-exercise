@@ -1,0 +1,1 @@
+#error this is a placeholder, the actual code will be revealed once you complete the pervious stage (or you can run ./stdex generate stage# to skip to here)
